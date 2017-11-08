@@ -100,50 +100,38 @@ public class OVRGearVrControllerTest : MonoBehaviour
 		monitors = new List<BoolMonitor>()
 		{
 			// virtual
-			new BoolMonitor("WasRecentered",                    () => OVRInput.GetControllerWasRecentered()),
-			new BoolMonitor("One",                              () => OVRInput.Get(OVRInput.Button.One)),
-			new BoolMonitor("OneDown",                          () => OVRInput.GetDown(OVRInput.Button.One)),
-			new BoolMonitor("OneUp",                            () => OVRInput.GetUp(OVRInput.Button.One)),
-			new BoolMonitor("One (Touch)",                      () => OVRInput.Get(OVRInput.Touch.One)),
-			new BoolMonitor("OneDown (Touch)",                  () => OVRInput.GetDown(OVRInput.Touch.One)),
-			new BoolMonitor("OneUp (Touch)",                    () => OVRInput.GetUp(OVRInput.Touch.One)),
-			new BoolMonitor("Two",                              () => OVRInput.Get(OVRInput.Button.Two)),
-			new BoolMonitor("TwoDown",                          () => OVRInput.GetDown(OVRInput.Button.Two)),
-			new BoolMonitor("TwoUp",                            () => OVRInput.GetUp(OVRInput.Button.Two)),
-			new BoolMonitor("PrimaryIndexTrigger",              () => OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger)),
-			new BoolMonitor("PrimaryIndexTriggerDown",          () => OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger)),
-			new BoolMonitor("PrimaryIndexTriggerUp",            () => OVRInput.GetUp(OVRInput.Button.PrimaryIndexTrigger)),
-			new BoolMonitor("PrimaryIndexTrigger (Touch)",      () => OVRInput.Get(OVRInput.Touch.PrimaryIndexTrigger)),
-			new BoolMonitor("PrimaryIndexTriggerDown (Touch)",  () => OVRInput.GetDown(OVRInput.Touch.PrimaryIndexTrigger)),
-			new BoolMonitor("PrimaryIndexTriggerUp (Touch)",    () => OVRInput.GetUp(OVRInput.Touch.PrimaryIndexTrigger)),
-			new BoolMonitor("PrimaryHandTrigger",               () => OVRInput.Get(OVRInput.Button.PrimaryHandTrigger)),
-			new BoolMonitor("PrimaryHandTriggerDown",           () => OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger)),
-			new BoolMonitor("PrimaryHandTriggerUp",             () => OVRInput.GetUp(OVRInput.Button.PrimaryHandTrigger)),
-			new BoolMonitor("Up",                               () => OVRInput.Get(OVRInput.Button.Up)),
-			new BoolMonitor("Down",                             () => OVRInput.Get(OVRInput.Button.Down)),
-			new BoolMonitor("Left",                             () => OVRInput.Get(OVRInput.Button.Left)),
-			new BoolMonitor("Right",                            () => OVRInput.Get(OVRInput.Button.Right)),
-			new BoolMonitor("Touchpad (Click)",                 () => OVRInput.Get(OVRInput.Button.PrimaryTouchpad)),
-			new BoolMonitor("TouchpadDown (Click)",             () => OVRInput.GetDown(OVRInput.Button.PrimaryTouchpad)),
-			new BoolMonitor("TouchpadUp (Click)",               () => OVRInput.GetUp(OVRInput.Button.PrimaryTouchpad)),
-			new BoolMonitor("Touchpad (Touch)",                 () => OVRInput.Get(OVRInput.Touch.PrimaryTouchpad)),
-			new BoolMonitor("TouchpadDown (Touch)",             () => OVRInput.GetDown(OVRInput.Touch.PrimaryTouchpad)),
-			new BoolMonitor("TouchpadUp (Touch)",               () => OVRInput.GetUp(OVRInput.Touch.PrimaryTouchpad)),
-
+			new BoolMonitor("WasRecentered",            () => OVRInput.GetControllerWasRecentered()),
+			new BoolMonitor("One",                      () => OVRInput.Get(OVRInput.Button.One)),
+			new BoolMonitor("OneDown",                  () => OVRInput.GetDown(OVRInput.Button.One)),
+			new BoolMonitor("OneUp",                    () => OVRInput.GetUp(OVRInput.Button.One)),
+			new BoolMonitor("Two",                      () => OVRInput.Get(OVRInput.Button.Two)),
+			new BoolMonitor("TwoDown",                  () => OVRInput.GetDown(OVRInput.Button.Two)),
+			new BoolMonitor("TwoUp",                    () => OVRInput.GetUp(OVRInput.Button.Two)),
+			new BoolMonitor("PrimaryIndexTrigger",      () => OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger)),
+			new BoolMonitor("PrimaryIndexTriggerDown",  () => OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger)),
+			new BoolMonitor("PrimaryIndexTriggerUp",    () => OVRInput.GetUp(OVRInput.Button.PrimaryIndexTrigger)),
+			new BoolMonitor("Up",                       () => OVRInput.Get(OVRInput.Button.Up)),
+			new BoolMonitor("Down",                     () => OVRInput.Get(OVRInput.Button.Down)),
+			new BoolMonitor("Left",                     () => OVRInput.Get(OVRInput.Button.Left)),
+			new BoolMonitor("Right",                    () => OVRInput.Get(OVRInput.Button.Right)),
+			new BoolMonitor("Touchpad (Touch)",         () => OVRInput.Get(OVRInput.Touch.PrimaryTouchpad)),
+			new BoolMonitor("TouchpadDown (Touch)",     () => OVRInput.GetDown(OVRInput.Touch.PrimaryTouchpad)),
+			new BoolMonitor("TouchpadUp (Touch)",       () => OVRInput.GetUp(OVRInput.Touch.PrimaryTouchpad)),
+			new BoolMonitor("Touchpad (Click)",         () => OVRInput.Get(OVRInput.Button.PrimaryTouchpad)),
+			new BoolMonitor("TouchpadDown (Click)",     () => OVRInput.GetDown(OVRInput.Button.PrimaryTouchpad)),
+			new BoolMonitor("TouchpadUp (Click)",       () => OVRInput.GetUp(OVRInput.Button.PrimaryTouchpad)),
 			// raw
-			new BoolMonitor("Start",                            () => OVRInput.Get(OVRInput.RawButton.Start)),
-			new BoolMonitor("StartDown",                        () => OVRInput.GetDown(OVRInput.RawButton.Start)),
-			new BoolMonitor("StartUp",                          () => OVRInput.GetUp(OVRInput.RawButton.Start)),
-			new BoolMonitor("Back",                             () => OVRInput.Get(OVRInput.RawButton.Back)),
-			new BoolMonitor("BackDown",                         () => OVRInput.GetDown(OVRInput.RawButton.Back)),
-			new BoolMonitor("BackUp",                           () => OVRInput.GetUp(OVRInput.RawButton.Back)),
-			new BoolMonitor("A",                                () => OVRInput.Get(OVRInput.RawButton.A)),
-			new BoolMonitor("ADown",                            () => OVRInput.GetDown(OVRInput.RawButton.A)),
-			new BoolMonitor("AUp",                              () => OVRInput.GetUp(OVRInput.RawButton.A)),
+			new BoolMonitor("Start",                    () => OVRInput.Get(OVRInput.RawButton.Start)),
+			new BoolMonitor("StartDown",                () => OVRInput.GetDown(OVRInput.RawButton.Start)),
+			new BoolMonitor("StartUp",                  () => OVRInput.GetUp(OVRInput.RawButton.Start)),
+			new BoolMonitor("Back",                     () => OVRInput.Get(OVRInput.RawButton.Back)),
+			new BoolMonitor("BackDown",                 () => OVRInput.GetDown(OVRInput.RawButton.Back)),
+			new BoolMonitor("BackUp",                   () => OVRInput.GetUp(OVRInput.RawButton.Back)),
+			new BoolMonitor("A",                        () => OVRInput.Get(OVRInput.RawButton.A)),
+			new BoolMonitor("ADown",                    () => OVRInput.GetDown(OVRInput.RawButton.A)),
+			new BoolMonitor("AUp",                      () => OVRInput.GetUp(OVRInput.RawButton.A)),
 		};
 	}
-	static string prevConnected = "";
-	static BoolMonitor controllers = new BoolMonitor("Controllers Changed", () => { return OVRInput.GetConnectedControllers().ToString() != prevConnected; });
 	
 	void Update()
 	{
@@ -164,13 +152,6 @@ public class OVRGearVrControllerTest : MonoBehaviour
 
 		string connectedControllerNames = OVRInput.GetConnectedControllers().ToString();
 		data.AppendFormat("Connected: {0}\n", connectedControllerNames);
-
-		data.AppendFormat("PrevConnected: {0}\n", prevConnected);
-
-		controllers.Update();
-		controllers.AppendToStringBuilder(ref data);
-
-		prevConnected = connectedControllerNames;
 
 		Quaternion rot = OVRInput.GetLocalControllerRotation(activeController);
 		data.AppendFormat("Orientation: ({0:F2}, {1:F2}, {2:F2}, {3:F2})\n", rot.x, rot.y, rot.z, rot.w);
@@ -195,12 +176,6 @@ public class OVRGearVrControllerTest : MonoBehaviour
 
 		Vector2 secondaryTouchpad = OVRInput.Get(OVRInput.Axis2D.SecondaryTouchpad);
 		data.AppendFormat("SecondaryTouchpad: ({0:F2}, {1:F2})\n", secondaryTouchpad.x, secondaryTouchpad.y);
-
-		float indexTrigger = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger);
-		data.AppendFormat("PrimaryIndexTriggerAxis1D: ({0:F2})\n", indexTrigger);
-
-		float handTrigger = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger);
-		data.AppendFormat("PrimaryHandTriggerAxis1D: ({0:F2})\n", handTrigger);
 
 		for (int i = 0; i < monitors.Count; i++)
 		{

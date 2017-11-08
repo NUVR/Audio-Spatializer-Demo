@@ -27,7 +27,7 @@ using UnityEngine;
 
 internal static class OVRPlugin
 {
-	public static readonly System.Version wrapperVersion = OVRP_1_19_0.version;
+	public static readonly System.Version wrapperVersion = OVRP_1_18_1.version;
 
 	private static System.Version _version;
 	public static System.Version version
@@ -240,7 +240,8 @@ internal static class OVRPlugin
 	public enum PlatformUI
 	{
 		None = -1,
-		ConfirmQuit = 1,
+		GlobalMenu = 0,
+		ConfirmQuit,
 		GlobalMenuTutorial,
 	}
 
@@ -959,7 +960,31 @@ internal static class OVRPlugin
 				}
 			}
 
+			// for Older plugin versions, return true is less disruptive?
+			Debug.LogWarning("ovrp_GetAppHasInputFocus only available on 1.18 and newer plugins ");
 			return true;
+		}
+	}
+
+	public static bool hasSystemOverlayPresent
+	{
+		get
+		{
+			if (version >= OVRP_1_18_0.version)
+			{
+				Bool hasSystemOverlay = Bool.False;
+				Result result = OVRP_1_18_0.ovrp_GetAppHasSystemOverlayPresent(out hasSystemOverlay);
+				if (Result.Success == result)
+					return hasSystemOverlay == Bool.True;
+				else
+				{
+					Debug.LogWarning("ovrp_GetAppHasSystemOverlayPresent return " + result);
+					return false;
+				}
+			}
+
+			Debug.LogWarning("ovrp_GetAppHasSystemOverlayPresent only available on 1.18 and newer plugins ");
+			return false;
 		}
 	}
 
@@ -2485,10 +2510,14 @@ internal static class OVRPlugin
 
 		[DllImport(pluginName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern Result ovrp_GetAppHasInputFocus(out Bool appHasInputFocus);
+
+		[DllImport(pluginName, CallingConvention = CallingConvention.Cdecl)]
+		public static extern Result ovrp_GetAppHasSystemOverlayPresent(out Bool appHasSystemOverlayPresent);
+
 	}
 
-	private static class OVRP_1_19_0
+	private static class OVRP_1_18_1
 	{
-		public static readonly System.Version version = new System.Version(1, 19, 0);
+		public static readonly System.Version version = new System.Version(1, 18, 1);
 	}
 }
