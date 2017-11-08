@@ -1,0 +1,158 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &177326
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 412190}
+  - component: {fileID: 11465696}
+  - component: {fileID: 11429682}
+  - component: {fileID: 11472770}
+  - component: {fileID: 11436706}
+  - component: {fileID: 114000012132779148}
+  m_Layer: 0
+  m_Name: '[VRSimulator]'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &412190
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 177326}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &11429682
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 177326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b54761d26a3d5a84eb8fe92445c2a30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _startingPosition: 1
+  _primaryHand: 0
+  _movementSpeed: 0.5
+  _applyCollider: 1
+  _applyColliderHand: 2
+  _isTrigger: 0
+  _colliderPhysicMaterial: {fileID: 0}
+  _colliderCenter: {x: 0, y: 0, z: 0}
+  _colliderRadius: 0.5
+  _colliderSize: {x: 1, y: 1, z: 1}
+  _colliderHeight: 2
+  _colliderDirection: 1
+  _applyRigidbody: 0
+  _applyRigidbodyHand: 0
+  _isKinematic: 0
+  _rbMass: 1
+  _rbDrag: 0
+  _rbAngularDrag: 0.05
+  _rbUseGravity: 0
+--- !u!114 &11436706
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 177326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebf83038b9bb6dd439d926c80826e42a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _createImmerseumDefaults: 1
+  _areInputAxesDefined: 1
+--- !u!114 &11465696
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 177326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aef96526d2ed894db81b18e6fcbad5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _disableInStandaloneBuild: 1
+  _displayHelpBoxes: 0
+  _logDiagnostics: 0
+  _logInputActions: 0
+  _simulateControllers: 1
+  _controllerPrimitive: 0
+  _primitiveScaling: 0.05
+  _leftControllerPrefab: {fileID: 0}
+  _rightControllerPrefab: {fileID: 0}
+  _cameraInitializationTimeout: 2
+  _CameraRig: {fileID: 0}
+  _heightTarget: 2
+  _customHeadHeight: 0
+--- !u!114 &11472770
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 177326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8754cfe79e0bba445bcf6876bd7c9cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _useDefaultInputActions: 1
+  _isStrafeEnabled: 0
+  _primaryGamepadTrigger: 1
+  _keyboardRotationRatchet: 45
+  _accelerationRate: 0.1
+  _isRunEnabled: 1
+  _isRunActive: 0
+  _forwardDampingRate: 0.3
+  _backAndSideDampingRate: 0.3
+  _gravityAdjustment: 0.379
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 177326}
+  m_IsPrefabParent: 1
+--- !u!114 &114000012132779148
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 177326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3175ff7778465f745ab771737588b7f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputMoveTarget: 0
+  _playAreaDisplayTrigger: 1
+  _playAreaDisplayOnInputAction: togglePrimaryTrigger
+  _playAreaDisplayOnApproachDistance: 0.25
+  _playAreaSize: 1
+  _customPlayAreaDimensions: {x: 0, y: 0}
+  _playAreaBorderThickness: 0.15
+  _playAreaColor:
+    r: 0
+    g: 1
+    b: 1
+    a: 1
+  _playAreaMaterial: {fileID: 0}
